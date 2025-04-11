@@ -1,70 +1,56 @@
-/* Calendar.css - Dark Mode */
-
 .calendar {
     font-family: Arial, sans-serif;
-    max-width: 50%;
-    min-width: 430px;
-    margin: 20px auto;
+    min-width: 600px;
+    height: 600px; 
+    margin-left: auto;
+    margin-right: 0;
+    margin-top: 20px;
     border: 1px solid #444;
-    border-radius: 8px;
+   border-left: none;
+    border-top-left-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     background-color: #222;
     color: #ddd;
 }
 
-.calendar h2 {
-    text-align: center;
-    background-color: #333;
-    margin: 0;
-    padding: 10px 0;
-    font-size: 1.5rem;
-    color: #fff;
-}
-
 .calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
-    padding: 10px;
+    
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 .day-name {
     text-align: center;
     font-weight: bold;
     color: #bbb;
-    padding: 5px 0;
+    padding: 10px 0; 
     background-color: #444;
     border: 1px solid #555;
-    border-radius: 4px;
+    
 }
 
 .day {
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0; 
     background-color: #333;
     border: 1px solid #555;
-    border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     color: #ddd;
 }
-
-.day:hover {
-    background-color: #555;
+.day:hover {  
+    background-color: #555;  
 }
-
-.empty-slot {
-    background-color: transparent;
-    border: none;
-}
-
 .selectors {
     text-align: center;
     padding: 10px;
     background-color: #333;
     border-top: 1px solid #444;
     margin: auto;
+    justify-content: flex;
 }
 
 .selectors label {

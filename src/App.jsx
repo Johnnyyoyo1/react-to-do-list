@@ -1,12 +1,13 @@
-import Calendar from './Calendar'
+import Calendar from './components/Calender/Calendar'
 import './App.css'
-
+import ToDoList from './components/ToDoList/ToDoList'
 function App() {
 
 
   return (
-    <>
-      <Calendar></Calendar>
+    <><div className='container'><Calendar></Calendar>
+      <ToDoList></ToDoList></div>
+
     </>
   )
 }
