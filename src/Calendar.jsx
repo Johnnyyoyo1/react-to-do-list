@@ -38,13 +38,13 @@ const Calendar = () => {
         // Fill days of the month
         for (let day = 1; day <= totalDays; day++) {
             days.push(
-            <div
-                onClick={() => debug({ day, month: currentMonth, year: currentYear })}
-                key={day}
-                className="day"
-            >
-                {day}
-            </div>
+                <div
+                    onClick={() => debug({ day, month: currentMonth, year: currentYear })}
+                    key={day}
+                    className="day"
+                >
+                    {day}
+                </div>
             );
         }
 
@@ -54,6 +54,25 @@ const Calendar = () => {
     return (
         <div className="calendar">
             <h2>{months[currentMonth]} {currentYear}</h2>
+
+            <div className="selectors">
+                <label htmlFor="month">Month: </label>
+                <select id="month" value={currentMonth} onChange={handleMonthChange}>
+                    {months.map((month, index) => (
+                        <option key={index} value={index}>
+                            {month}
+                        </option>
+                    ))}
+                </select>
+                <label htmlFor="year">Year: </label>
+                <input
+                    id="year"
+                    type="number"
+                    value={currentYear}
+                    onChange={handleYearChange}
+                />
+
+            </div>
             <div className="calendar-grid">
                 <div className="day-name">Sun</div>
                 <div className="day-name">Mon</div>
@@ -64,27 +83,7 @@ const Calendar = () => {
                 <div className="day-name">Sat</div>
                 {renderCalendar()}
             </div>
-            <div className="selectors">
-                <div className="month-selector">
-                    <label htmlFor="month">Change Month: </label>
-                    <select id="month" value={currentMonth} onChange={handleMonthChange}>
-                        {months.map((month, index) => (
-                            <option key={index} value={index}>
-                                {month}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-                <div className="year-selector">
-                    <label htmlFor="year">Change Year: </label>
-                    <input
-                        id="year"
-                        type="number"
-                        value={currentYear}
-                        onChange={handleYearChange}
-                    />
-                </div>
-            </div>
+
         </div>
     );
 };
